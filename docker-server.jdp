@@ -1,0 +1,21 @@
+pipeline {
+    agent { label "linux" }
+    
+    parameters {
+        string(name: 'containerPort', description: 'Port of the Docker container.', defaultValue: '5002')
+    }
+    
+    stages {
+        stage('Build image') { 
+            steps {
+                sh "sudo docker build -t article-scanner ."
+            }
+        }
+        stage('Build run container') { 
+            steps {
+                sh (script: "sudo docker rm --force article-scanner", returnStatus: true)
+                sh "sudo docker run -d --name article-scanner -p ${params.containerPort}:5002 --restart unless-stopped article-scanner"
+            }
+        }
+    }
+}
