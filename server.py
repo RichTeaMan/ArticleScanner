@@ -5,6 +5,7 @@ from scanner import Scanner
 
 app = Flask(__name__)
 api = Api(app)
+scanner = Scanner()
 
 class Test(Resource):
     def get(self):
@@ -13,7 +14,6 @@ class Test(Resource):
     def post(self):
         json_data = request.get_json(force=True)
         doc = json_data['doc']
-        scanner = Scanner()
         tokens = scanner.scan(doc)
         return jsonify(tokens=[e.serialize() for e in tokens])
 
