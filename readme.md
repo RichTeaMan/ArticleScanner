@@ -1,6 +1,6 @@
 # Article Scanner
 
-A project for scanning articles with the SpaCy libary.
+A project for scanning articles with the SpaCy library.
 
 ## Installing and Running
 
@@ -28,3 +28,7 @@ Run container:
 ```
 sudo docker run -d -p 5002:5002 --name article-scanner article-scanner
 ```
+
+## API Reference
+
+A Swagger reference is available in swagger.yml.
