@@ -36,7 +36,7 @@ A Swagger reference is available in swagger.yml.
 ### Curl Example
 
 ```bash
-curl -X POST http://localhost:5002/scan -F 'document=I would not eat them here or there I would not eat them anywhere I would not eat green eggs and ham I do not like them, Sam-I-am'
+curl -X POST http://localhost:5002/scan -F 'document=I do not like green eggs and ham'
 ```
 
 Response
