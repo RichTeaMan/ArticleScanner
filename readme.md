@@ -2,6 +2,21 @@
 
 A project for scanning articles with the SpaCy libary.
 
+## Installing and Running
+
+Installing:
+```
+pip install virtualenv
+virtualenv venv
+pip install -r requirements.txt
+python -m spacy download en
+```
+
+Running:
+```
+python server.py
+```
+
 ## Docker
 
 Create image:
