@@ -1,4 +1,6 @@
-# Article Scanner
+# Document Scanner
+
+![Docker Automated build](https://img.shields.io/docker/automated/richteaman/document-scanner.svg)
 
 A project for scanning articles with the SpaCy library.
 

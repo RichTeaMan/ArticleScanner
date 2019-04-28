@@ -2,3 +2,5 @@ spacy
 keras==2.0.9
 flask
 flask-restful
+uWSGI
+Werkzeug
