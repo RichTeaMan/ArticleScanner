@@ -1,11 +1,8 @@
 swagger: "2.0"
 info:
   description: "Document Scanner API reference"
-  version: "1.0.0"
+  version: "0.0.2"
   title: "Document Scanner"
-  termsOfService: "http://swagger.io/terms/"
-  contact:
-    email: "apiteam@swagger.io"
   license:
     name: "MIT"
     url: "https://github.com/RichTeaMan/DocumentScanner/blob/master/license.txt"
@@ -27,6 +24,28 @@ paths:
       - in: formData
         name: "document"
         type: "string"
+        description: "Document to scan"
+        required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ScanResponse"
+        400:
+          description: "Invalid input"
+  /scanUpload:
+    post:
+      summary: "Scans a document from a file attachment"
+      description: ""
+      operationId: "scanUploadDocument"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - in: formData
+        name: "document"
+        type: "file"
         description: "Document to scan"
         required: true
       responses:

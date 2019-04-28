@@ -41,6 +41,15 @@ A Swagger reference is available in swagger.yml.
 curl -X POST http://localhost:5002/scan -F 'document=I do not like green eggs and ham'
 ```
 
+A scanUpload endpoint also exists that can parse file attachments. This is
+useful for larger documents that would otherwise cause 414 URI too long
+problems.
+```bash
+curl -X POST -F document=@data.txt http://localhost:5002/scanUpload
+```
+data.txt is expected to be a plain text file for the document to be analysed.
+
+
 Response
 ```json
 {
