@@ -13,7 +13,15 @@ class Scan(Resource):
         tokens = scanner.scan(document)
         return jsonify(tokens=[e.serialize() for e in tokens])
 
-api.add_resource(Scan, '/scan') # Route_1
+class ScanUpload(Resource):
+    def post(self):
+        documentFile = request.files['document']
+        document = documentFile.read().decode("utf-8")
+        tokens = scanner.scan(document)
+        return jsonify(tokens=[e.serialize() for e in tokens])
+
+api.add_resource(Scan, '/scan')
+api.add_resource(ScanUpload, '/scanUpload')
 
 if __name__ == '__main__':
      app.run(host='0.0.0.0', port='5002')
