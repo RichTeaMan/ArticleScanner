@@ -7,6 +7,10 @@ app = Flask(__name__)
 api = Api(app)
 scanner = Scanner()
 
+class Info(Resource):
+    def get(self):
+        return 'Document scanner. Refer to https://github.com/RichTeaMan/DocumentScanner for usage information.'
+
 class Scan(Resource):    
     def post(self):
         document = request.form['document']
@@ -20,6 +24,7 @@ class ScanUpload(Resource):
         tokens = scanner.scan(document)
         return jsonify(tokens=[e.serialize() for e in tokens])
 
+api.add_resource(Info, '/')
 api.add_resource(Scan, '/scan')
 api.add_resource(ScanUpload, '/scanUpload')
 
