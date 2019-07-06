@@ -1,5 +1,7 @@
 FROM python:3.6-slim
 
+EXPOSE 80
+
 RUN apt-get clean \
     && apt-get -y update \
     && apt-get -y install --no-install-recommends nginx python3-dev build-essential \

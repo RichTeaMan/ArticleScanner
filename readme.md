@@ -28,7 +28,7 @@ sudo docker build -t article-scanner .
 
 Run container:
 ```bash
-sudo docker run -d -p 5002:5002 --name article-scanner article-scanner
+sudo docker run -d -p 5002:80 --name article-scanner article-scanner
 ```
 
 ## API Reference
