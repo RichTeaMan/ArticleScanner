@@ -14,7 +14,7 @@ pipeline {
         stage('Build run container') { 
             steps {
                 sh (script: "sudo docker rm --force article-scanner", returnStatus: true)
-                sh "sudo docker run -d --name article-scanner -p ${params.containerPort}:5002 --restart unless-stopped article-scanner"
+                sh "sudo docker run -d --name article-scanner -p ${params.containerPort}:80 --restart unless-stopped article-scanner"
             }
         }
     }
